@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f8fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(135deg, #ff42c3, #3b8dff);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    width: 100%;
+    max-width: 800px;
+}
+
+.accordion {
+    list-style: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.accordion li {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion li:last-child {
+    border-bottom: none;
+}
+
+.accordion input[type="radio"] {
+    display: none;
+}
+
+.accordion label {
+    display: block;
+    padding: 15px 20px;
+    background-color: #007acc;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.accordion label::after {
+    content: '\25B6'; /* Right arrow */
+    font-size: 1em;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+}
+
+.accordion input[type="radio"]:checked + label::after {
+    transform: rotate(90deg); /* Down arrow */
+}
+
+.accordion label:hover {
+    background-color: #005fa3;
+}
+
+.accordion ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f7f8fa;
+}
+
+.accordion input[type="radio"]:checked + label + ul {
+    max-height: 500px; /* Adjust as needed */
+    transition: max-height 0.5s ease-in;
+}
+
+.accordion ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: color 0.3s;
+}
+
+.accordion ul li a:hover {
+    color: #007acc;
+}
+
+.accordion ul li:last-child {
+    border-bottom: none;
+}
